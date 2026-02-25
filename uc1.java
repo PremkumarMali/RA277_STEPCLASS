@@ -1,26 +1,25 @@
-import java.util.Scanner;
+mport java.util.Scanner;
 import java.lang.String;
 
-public class UseCase2PalindromeCheckerApp {
-    public static void main(String[] args)
-    {
-        String a= "madam";
+public class UseCase1PalindromeCheckerApp {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        String a = sc.nextLine();
         char[] b= a.toCharArray();
-        int l= a.length();
+        int i=0;
         boolean flag = false;
-        for(int i=0; i<l/2;i++)
-        {
-            if(b[i]==b[l-i])
-                flag= true;
+        int l= a.length();
+        while (i<l/2) {
+            if(a[i] != a[l - i]) {
+                System.out.println("Not a Palindrome");
+                return;
+            }
             else
-                flag= false;
-
+                flag=true;
+            i++;
         }
-        if (flag==true)
-            System.out.println("String is Palindrome");
-        else
-            System.out.println("Not a Palindrome");
-
+        if(flag==true)
+            System.out.println("Is a Palindrome");
 
     }
 }
